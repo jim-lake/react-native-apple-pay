@@ -121,18 +121,6 @@ export default class PaymentRequestUpdateEvent {
         // when updating shippingMethods.  So we call the `_handleShippingOptionChange`
         // method with the first shippingOption id so that JS is in sync with Apple Pay.
         .then(() => {
-          if (Platform.OS !== 'ios') {
-            return;
-          }
-
-          if (
-            target._details.shippingOptions &&
-            target._details.shippingOptions.length > 0
-          ) {
-            target._handleShippingOptionChange({
-              selectedShippingOptionId: target._details.shippingOptions[0].id
-            });
-          }
         })
         // 13. Upon rejection of detailsPromise:
         .catch(e => {
