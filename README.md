@@ -27,6 +27,15 @@ npx jetify
 
 ### iOS
 
+Add the following to your Podfile if you need Stripe or Braintree
+
+```
+pod 'Stripe'
+pod 'Braintree'
+```
+
+Then:
+
 ```
 cd ios
 pod install
